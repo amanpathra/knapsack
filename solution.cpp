@@ -25,6 +25,6 @@ class Solution {
         // The maximum value that can be obtained with the given weight capacity W
         return dp[n][W];
 
-        // update 5 at main
+        // new changes in solution
     }
 };
