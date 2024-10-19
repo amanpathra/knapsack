@@ -8,10 +8,11 @@ class Solution {
     int knapSack(int W, vector<int>& wt, vector<int>& val) {
         int n = wt.size();  // Number of items
         vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
-
         // Build table dp[][] in bottom-up manner
         for (int i = 1; i <= n; i++) {
+            // for each item
             for (int w = 1; w <= W; w++) {
+                // for each weight
                 if (wt[i - 1] <= w) {
                     // Maximum of including or excluding the current item
                     dp[i][w] = max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);
@@ -25,6 +26,6 @@ class Solution {
         // The maximum value that can be obtained with the given weight capacity W
         return dp[n][W];
 
-        // update 5 at main
+        // new changes in solution
     }
 };
